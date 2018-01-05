@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FoodBuddies: Maker Cooking Easier</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/base.css">
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/colors.css">
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/svg-icons.css">
+        <link rel="shortcut icon" sizes="16x16" href="../static/images/favicons/favicon.png">
+        <link rel="shortcut icon" sizes="32x32" href="../static/images/favicons/favicon-32.png">
+        <link rel="apple-touch-icon icon" sizes="76x76" href="../static/images/favicons/favicon-76.png">
+        <link rel="apple-touch-icon icon" sizes="120x120" href="../static/images/favicons/favicon-120.png">
+        <link rel="apple-touch-icon icon" sizes="152x152" href="../static/images/favicons/favicon-152.png">
+        <link rel="apple-touch-icon icon" sizes="180x180" href="../static/images/favicons/favicon-180.png">
+        <link rel="apple-touch-icon icon" sizes="192x192" href="../static/images/favicons/favicon-192.png">
+        <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    </head>
+    <body>
+        <main role="main">
+            <article id="webslides">
+                <section class="aligncenter">
+                    <span class="background" style="background-image:url('../resource/macaron.jpg')"></span>
+                    <div class="wrap">
+                        <h2 class="text-landing"><strong>db recipe</strong></h2>
+                    </div>
+                    <div class="wrap" id="intro">
+                        <div>
+                            <strong>Team:</strong> FoodBuddies
+                        </div>
+                        <div>
+                            <ul class="left-align">
+                                <strong>Members:</strong>
+                                <li>Zetian Chen (Devon)</li>
+                                <li>Bichen Xu</li>
+                                <li>Yuanyuan Lin</li>
+                                <li>Lai Wei</li>
+                            </ul>    
+                        </div>
+                        <div>
+                            <strong>Slide Creator:</strong> Devon
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap size-50">
+                        <h2>
+                            <svg class="fa-heart-o">
+                                <use xlink:href="#fa-heart-o"></use>
+                            </svg>
+                            ROUTE
+                        </h2>
+                        <hr>
+                        <ul class="description">
+                            <li>
+                                <span class="text-label lbl">Business Space: </span>
+                                Who would want to use this DB? Why?
+                            </li>
+                            <li>
+                                <span class="text-label lbl">ERD & Life Cycle: </span>
+                                What entities does this DB contain? How are they related?
+                            </li>
+                            <li>
+                                <span class="text-label lbl">Coding EG: </span>
+                                Stored Procedure? Business Rule? Queries?
+                            </li>
+                            <li>
+                                <span class="text-label lbl">Addition</span>
+                                What's more?
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap aligncenter fadeInUp">
+                        <h2>
+                            <strong>Business Space: </strong><br/>
+                            Who would want to use this DB? Why?
+                        </h2>
+                    </div>
+                </section>
+
+                <section>
+                    <span class="background" style="background-image:url('../resource/bread.jpg')"></span>
+                    <div class="wrap">
+                        <div class="alignright size-50 bg-trans-dark">
+                            <p class="text-subtitle text-serif">Current Trend</p>
+                            <h3><strong>Business Space</strong></h3>
+                            <p>
+                            Nowadays, people are no longer satisfied with enjoying delicacy in restaurants. Instead, they want to learn how to cook by THEMSELVES. Database dbRECIPE offers thousands of recipes with detailed procedures, nutrient composition, recipe suggestions and more...
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap aligncenter fadeInUp">
+                        <h2>
+                            <strong>ERD & Life Cycle: </strong><br/>
+                            What entities does this DB contain? How are they related?
+                        </h2>
+                    </div>
+                </section>
+
+                <section class="fullscreen bg-white">
+                    <div class="card-50">
+                        <figure>
+                            <img src="../resource/dbRECIPE.png" alt="Revised ERD Image">
+                        </figure>
+                        <div class="flex-content">
+                            <h2><strong>dbRECIPE ERD</strong></h2>
+                            <p class="text-intro">
+                            Arc of Database Lifecycle
+                            </p>
+                            <p>
+                            By providing the information a user needs to complete a specific dish and prompts some information the user may like, the database would perfectly fill the problem-space of “I want to cook but don’t know how...”
+                            </p>
+                            <p class="text-symbols">* * *</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap aligncenter fadeInUp">
+                        <h2>
+                            <strong>Coding EG: </strong><br/>
+                            Stored Procedure? Business Rule? Queries?
+                        </h2>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Coding EG: <strong>Stored Procedure</strong></h3>
+                                <p class="text-intro">
+                                How to create a stored procedure to insert into table tblRECIPE?
+                                </p>
+                                <p>
+                                Pass in <strong>'name'</strong> parameters to get the primary key value in lookup tables. Modify the targed entity in one transaction.
+                                </p>
+                            </div>
+                        <div class="column">
+                            <pre class="sqlcode">CREATE PROCEDURE uspPopRecipe
+    @RecipeName     VARCHAR(50)
+  , @DateCreated    DATE
+  , @RecipeTypeName VARCHAR(50)
+  , @CuisineName    VARCHAR(50)
+  , @DifficultyName VARCHAR(50)
+AS
+    DECLARE @RecipeTypeID INT, @CuisineID INT, @DifficultyID INT
+    SET @RecipeTypeID = (SELECT RecipeTypeID FROM tblRECIPE_TYPE
+                         WHERE  RecipeTypeName = @RecipeTypeName)
+    SET @CuisineID = (SELECT CuisineID FROM tblCUISINE
+                      WHERE  CuisineName = @CuisineName)
+    SET @DifficultyID = (SELECT DifficultyID FROM tblDIFFICULTY
+                         WHERE  DifficultyName = @DifficultyName)
+     -- ERROR HANDLING
+    BEGIN TRAN G1
+        INSERT INTO tblRECIPE (RecipeName, DateCreated, RecipeTypeID,
+                               CuisineID, DifficultyID)
+            VALUES (@RecipeName, @DateCreated, @RecipeTypeID,
+                    @CuisineID, @DifficultyID)
+     IF @@ERROR <> 0
+        ROLLBACK TRAN G1
+     ELSE
+        COMMIT   TRAN G1
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap">
+                        <div class="grid ms vertical-align">
+                            <div class="column">
+                                <pre class="sqlcode">CREATE FUNCTION fn_noAthrYngrThan8LessThan3Ingrdnt()
+    RETURNS INT
+AS
+BEGIN
+    DECLARE @Ret INT = 0
+    IF EXISTS ( SELECT *
+                FROM tblUSER U
+                    JOIN tblUSER_RECIPE_RELATIONSHIP URR ON U.UserID = URR.UserID
+                    JOIN tblRELATIONSHIP R ON URR.RelationshipID = R.RelationshipID
+                    JOIN tblRECIPE RE ON URR.RecipeID = RE.RecipeID
+                    JOIN tblRECIPE_INGREDIENT RI ON RE.RecipeID = RI.RecipeID
+                WHERE U.DateOfBirth > (SELECT GetDate() - 365.25 * 8)
+                    AND R.RelatioshipName = 'Author'
+                    AND COUNT( RI.IngredientID ) < 3
+        )
+        SET @Ret = 1
+    RETURN @Ret
+END
+
+ALTER TABLE tblUSER_RECIPE_RELATIONSHIP
+ADD CONSTRAINT CK_noAthrYngrThan8LessThan3Ingrdnt
+CHECK (dbo.fn_noAthrYngrThan8LessThan3Ingrdnt() = 0)
+</pre>
+                            </div>
+                            <div class="column">
+                                <h3>Coding EG: <strong>Business Rules</strong></h3>
+                                <p class="text-intro">
+                                An author younger than 8 years old is not allowed to
+                                submit a recipe in which less than 3 ingredients are
+                                used :D
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap">
+                        <div class="grid sm vertical-align">
+                            <div class="column">
+                                <h3>Coding EG: <strong>Query #1</strong></h3>
+                                <p class="text-intro">
+                                Find the top ten recipes that have 'egg' in it or
+                                contains the nutrient vitamin C
+                                </p>
+                            </div>
+                            <div class="column">
+                                <pre class="sqlcode">SELECT TOP 10 R.RecipeName
+FROM     tblRECIPE               R 
+    JOIN tblRECIPE_INGREDIENT   RI ON R.RecipeID       = RI.RecipeID
+    JOIN tblINGREDIENT           I ON I.IngredientID   = RI.IngredientID
+    JOIN tblINGREDIENT_NUTRIENT IT ON I.IngredientID   = IT.IngredientID
+    JOIN tblNUTRIENT             N ON N.NutrientID     = IT.NutrientID
+WHERE N.NutrientName = 'Vitamin C'
+    OR I.IngredientName = 'Egg' 
+
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap">
+                        <div class="grid ms vertical-align">
+                            <div class="column">
+                                <pre class="sqlcode">SELECT TOP 3 R.RecipeID
+           , R.RecipeName
+FROM     tblRecipe                     R
+    JOIN tblRecipe_Ingredient         RI ON R.RecipeID        = RI.RecipeID
+    JOIN tblIngredient                 I ON I.IngredientID    = RI.IngredientID
+    JOIN tblUser_Recipe_Relationship URR ON URR.RecipeID      = R.RecipeID
+    JOIN tblUser                       U ON U.UserID          = URR.UserID
+    JOIN tblRelationship              RL ON RL.RelationshipID = URR.RelationshipID
+WHERE   U.City             = 'Seattle'
+    AND I.IngredientName   = 'Salmon'
+    AND R.RelationshipName = 'Like'
+GROUP BY R.RecipeID
+ORDER BY COUNT(*) DESC
+</pre>
+                            </div>
+                            <div class="column">
+                                <h3>Coding EG: <strong>Query #2</strong></h3>
+                                <p class="text-intro">
+                                The most popular recipes for users in Seattle which
+                                include ingredient 'Salmon'
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap aligncenter fadeInUp">
+                        <h2>
+                            <strong>Addition: </strong><br/>
+                            What's more?
+                        </h2>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="wrap">
+                        <div class="card-50 bg-white">
+                            <figure>
+                                <img src="../resource/choco.jpg" alt="choco">
+                            </figure>
+                            <div class="flex-content">
+                                <h2>
+                                What's more!?
+                                </h2>
+                                <p style="text-indent: 2em;">
+                                    <span style="font-size: 15pt; font-weight: bold;">W</span>e can know so many aspects about a user's taste.<br/>
+                                </p>
+                                <p style="text-indent: 2em;">
+                                    Does he/she like steaks or bakery? Does he/she always like the recipes of some specific authors? Is there any relationship between his/her age and the recipes he/she prefers? What about the relationship between the geographical location and his/her preference?<br/>
+                                </p>
+                                <p style="text-indent: 2em;">
+                                    By asking these types of questions, the system can promote proper recipes to proper users at a proper time!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="fullscreen bg-black aligncenter">
+                    <div class="embed">
+                        <video autoplay loop muted poster="../resource/caesar.png">
+                            <source src="../resource/cook.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="wrap">
+                        <h2><strong>With dbRECIPE, you are the next CHEF</strong></h2>
+                    </div>
+                </section>
+
+                <section class="slide-top">
+                    <span class="background" style="background-image:url('../resource/davide.jpg')"></span>
+                    <div class="wrap fadeIn slow" id="clsn">
+                        <p class="text-context"><strong>dbRECIPE</strong></p>
+                        <h2>
+                        A spark to ignite passion &<br/>
+                        A stage for amazing creativity
+                        </h2>
+                    </div>
+                </section>
+
+                
+
+            </article>
+        </main>
+        <script src="../static/js/webslides.js"></script>
+        <script>
+            window.ws = new WebSlides();
+        </script>
+        <script defer src="../static/js/svg-icons.js"></script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+#intro {
+    line-height: 20px;
+    margin-left: 42%;
+    margin-top: 40px;
+    text-align: left;
+    width: 30%;
+}
+
+#intro ul {
+    list-style: none;
+}
+
+#intro div {
+    margin-top: 20px;
+}
+
+#clsn {
+	color: #EEEEEE;
+}
+
+.sqlcode {
+    font-size: 10pt;
+}
+
+.lbl {
+    font-size: 11pt;
+}
